@@ -148,54 +148,77 @@ async def help(message: Message):
 
 # Инлайн-запросы --------------------------------------------------------------------------------------------------------- 
 
-time = get_time()
-
-if time['day_of_week_str'] == 'Monday':
-    schedule_day_of_week_str = f'Сегодня {time['date_str']}, понедельник. \n\n1.\n<b>История</b>\n<u>8:30 - 10:05</u>\n<blockquote>424 аудитория\nДз: {get_homework('история')}</blockquote>\n\n2\n<b>Физкультура</b>\n<u>10:15 - 11:50</u>\n<blockquote>Спортивный зал</blockquote>\n\n3.\n<b>Английский язык</b>\n<u>12:20 - 13:55</u>\n<blockquote>413 аудитория - 1 группа\nДз: {get_homework('англ1')}\n314 аудитория - 2 группа\nДз: {get_homework('англ2')}</blockquote>\n\n4\n<b>Русский язык</b>\n<u>14:10 - 15:45</u>\n<blockquote>309 аудитория\n {get_homework('русский')}</blockquote>'
-
-    tommorow_schedule_day_of_week_str = f'Завтра {time['date_tommorow_str']}, вторник. \n\n1.\n<b>Литература</b>\n<u>8:30 - 10:05</u>\n<blockquote>309 аудитория\nДз: {get_homework('литература')}</blockquote>\n\n2\n<b>Физика</b>\n<u>10:15 - 11:50</u>\n<blockquote>404 аудитория\nДз: {get_homework('физика')}</blockquote>\n\n3.\n<b>История</b>\n<u>12:20 - 13:55</u>\n<blockquote>424 аудитория\nДз: {get_homework('история')}</blockquote>\n\n4.\n<b>Информатика</b>\n<u>14:10 - 15:45</u>\n<blockquote>404 аудитория\nДз: {get_homework('информатика')}</blockquote>'
-
-elif time['day_of_week_str'] == 'Tuesday':
-    schedule_day_of_week_str = f'Сегодня {time['date_str']}, вторник. \n\n1.\n<b>Литература</b>\n<u>8:30 - 10:05</u>\n<blockquote>309 аудитория\nДз: {get_homework('литература')}</blockquote>\n\n2\n<b>Физика</b>\n<u>10:15 - 11:50</u>\n<blockquote>404 аудитория\nДз: {get_homework('физика')}</blockquote>\n\n3.\n<b>История</b>\n<u>12:20 - 13:55</u>\n<blockquote>424 аудитория\nДз: {get_homework('история')}</blockquote>\n\n4\n<b>Информатика</b>\n<u>14:10 - 15:45</u>\n<blockquote>404 аудитория\nДз: {get_homework('информатика')}</blockquote>'
-
-    tommorow_schedule_day_of_week_str = f'Завтра {time['date_tommorow_str']}, среда. \n\n1.\n<b>Математика</b>\n<u>8:30 - 10:05</u>\n<blockquote>313 аудитория\nДз: {get_homework('математика')}</blockquote>\n\n2\n<b>Информатика</b>\n<u>10:15 - 11:50</u>\n<blockquote>404 аудитория\nДз: {get_homework('информатика')}</blockquote>\n\n3.\n<b>Литература</b>\n<u>12:20 - 13:55</u>\n<blockquote>309 аудитория\nДз: {get_homework('литература')}</blockquote>\n\n4.<b>Обществознание</b>\n<u>14:10 - 15:45</u>\n<blockquote>424 аудитория\nДз: {get_homework('обществознание')}</blockquote>'
-
-elif time['day_of_week_str'] == 'Wednesday':
-    schedule_day_of_week_str = f'Сегодня {time['date_str']}, среда. \n\n1.\n<b>Математика</b>\n<u>8:30 - 10:05</u>\n<blockquote>313 аудитория\nДз: {get_homework('математика')}</blockquote>\n\n2\n<b>Информатика</b>\n<u>10:15 - 11:50</u>\n<blockquote>404 аудитория\nДз: {get_homework('информатика')}</blockquote>\n\n3.\n<b>Литература</b>\n<u>12:20 - 13:55</u>\n<blockquote>309 аудитория\nДз: {get_homework('литература')}</blockquote>\n\n4\n<b>Обществознание</b>\n<u>14:10 - 15:45</u>\n<blockquote>424 аудитория\nДз: {get_homework('обществознание')}</blockquote>'
-
-    tommorow_schedule_day_of_week_str = f'Завтра {time['date_tommorow_str']}, четверг. \n\n1.\n<b>Русский язык</b>\n<u>8:30 - 10:05</u>\n<blockquote>309 аудитория\nДз: {get_homework('русский')}</blockquote>\n\n2\n<b>Информатика</b>\n<u>10:15 - 11:50</u>\n<blockquote>404 аудитория\nДз: {get_homework('информатика')}</blockquote>\n\n3.\n<b>ОПД</b>\n<u>12:20 - 13:55</u>\n<blockquote>422 аудитория\nДз: {get_homework('опд')}</blockquote>\n\n4.\n<b>Математика</b>\n<u>14:10 - 15:45</u>\n<blockquote>313 аудитория\nДз: {get_homework('математика')}</blockquote>'
-
-elif time['day_of_week_str'] == 'Thursday':
-    schedule_day_of_week_str = f'Сегодня {time['date_str']}, четверг. \n\n1.\n<b>Русский язык</b>\n<u>8:30 - 10:05</u>\n<blockquote>309 аудитория\nДз: {get_homework('русский')}</blockquote>\n\n2\n<b>Информатика</b>\n<u>10:15 - 11:50</u>\n<blockquote>404 аудитория\nДз: {get_homework('информатика')}</blockquote>\n\n3.\n<b>ОПД</b>\n<u>12:20 - 13:55</u>\n<blockquote>422 аудитория\nДз: {get_homework('опд')}</blockquote>\n\n4\n<b>Математика</b>\n<u>14:10 - 15:45</u>\n<blockquote>313 аудитория\nДз: {get_homework('математика')}</blockquote>'
-
-    tommorow_schedule_day_of_week_str = f'Завтра {time['date_tommorow_str']}, пятница!! \n\n1.\n<b>Физика</b>\n<u>8:30 - 10:05</u>\n<blockquote>404 аудитория\nДз: {get_homework('физика')}</blockquote>\n\n2\n<b>Биология</b>\n<u>10:15 - 11:50</u>\n<blockquote>119 аудитория\nДз: {get_homework('биология')}</blockquote>\n\n3.\n<b>Математика</b>\n<u>12:20 - 13:55</u>\n<blockquote>313 аудитория\nДз: {get_homework('математика')}</blockquote>'
-
-elif time['day_of_week_str'] == 'Friday':
-    schedule_day_of_week_str = f'Сегодня {time['date_str']}, пятница!! \n\n1.\n<b>Физика</b>\n<u>8:30 - 10:05</u>\n<blockquote>404 аудитория\nДз: {get_homework('физика')}</blockquote>\n\n2\n<b>Биология</b>\n<u>10:15 - 11:50</u>\n<blockquote>119 аудитория\nДз: {get_homework('биология')}</blockquote>\n\n3.\n<b>Математика</b>\n<u>12:20 - 13:55</u>\n<blockquote>313 аудитория\nДз: {get_homework('математика')}</blockquote>'
-
-    tommorow_schedule_day_of_week_str = f'Завтра суббота, выходной'
-
-elif time['day_of_week_str'] == 'Saturday':
-    schedule_day_of_week_str = 'Сегодня суббота, выходной'
-    
-    tommorow_schedule_day_of_week_str = 'чиллируем'
-
-elif time['day_of_week_str'] == 'Sunday':
-    schedule_day_of_week_str = 'завтра в шарагу 😨.'
-    
-    tommorow_schedule_day_of_week_str = f'Завтра {time['date_tommorow_str']}, понедельник. \n\n1.\n<b>История</b>\n<u>8:30 - 10:05</u>\n<blockquote>424 аудитория\nДз: {get_homework('история')}</blockquote>\n\n2\n<b>Физкультура</b>\n<u>10:15 - 11:50</u>\n<blockquote>Спортивный зал</blockquote>\n\n3.\n<b>Английский язык</b>\n<u>12:20 - 13:55</u>\n<blockquote>413 аудитория - 1 группа\nДз: {get_homework('англ1')}\n314 аудитория - 2 группа\nДз: {get_homework('англ2')}</blockquote>\n\n4.\n<b>Русский язык</b>\n<u>14:10 - 15:45</u>\n<blockquote>309 аудитория\nДз: {get_homework('русский')}</blockquote>'
+def schedule():
+    time = get_time()
+    if time['day_of_week_str'] == 'Monday':
+        schedule_day_of_week_str = f'Сегодня {time['time_str']}, понедельник. \n\n1.\n<b>История</b>\n<u>8:30 - 10:05</u>\n<blockquote>424 аудитория\nДз: {get_homework('история')}</blockquote>\n\n2\n<b>Физкультура</b>\n<u>10:15 - 11:50</u>\n<blockquote>Спортивный зал</blockquote>\n\n3.\n<b>Английский язык</b>\n<u>12:20 - 13:55</u>\n<blockquote>413 аудитория - 1 группа\nДз: {get_homework('англ1')}\n314 аудитория - 2 группа\nДз: {get_homework('англ2')}</blockquote>\n\n4\n<b>Русский язык</b>\n<u>14:10 - 15:45</u>\n<blockquote>309 аудитория\nДз: {get_homework('русский')}</blockquote>'
+        tommorow_schedule_day_of_week_str = f'Завтра {time['date_tommorow_str']}, вторник. \n\n1.\n<b>Литература</b>\n<u>8:30 - 10:05</u>\n<blockquote>309 аудитория\nДз: {get_homework('литература')}</blockquote>\n\n2\n<b>Физика</b>\n<u>10:15 - 11:50</u>\n<blockquote>404 аудитория\nДз: {get_homework('физика')}</blockquote>\n\n3.\n<b>История</b>\n<u>12:20 - 13:55</u>\n<blockquote>424 аудитория\nДз: {get_homework('история')}</blockquote>\n\n4.\n<b>Информатика</b>\n<u>14:10 - 15:45</u>\n<blockquote>404 аудитория\nДз: {get_homework('информатика')}</blockquote>'
+        return{
+            'schedule_day_of_week_str': schedule_day_of_week_str,
+            'tommorow_schedule_day_of_week_str': tommorow_schedule_day_of_week_str
+        }
+    elif time['day_of_week_str'] == 'Tuesday':
+        time = get_time()
+        schedule_day_of_week_str = f'Сегодня {time['date_str']}, вторник. \n\n1.\n<b>Литература</b>\n<u>8:30 - 10:05</u>\n<blockquote>309 аудитория\nДз: {get_homework('литература')}</blockquote>\n\n2\n<b>Физика</b>\n<u>10:15 - 11:50</u>\n<blockquote>404 аудитория\nДз: {get_homework('физика')}</blockquote>\n\n3.\n<b>История</b>\n<u>12:20 - 13:55</u>\n<blockquote>424 аудитория\nДз: {get_homework('история')}</blockquote>\n\n4\n<b>Информатика</b>\n<u>14:10 - 15:45</u>\n<blockquote>404 аудитория\nДз: {get_homework('информатика')}</blockquote>'
+        tommorow_schedule_day_of_week_str = f'Завтра {time['date_tommorow_str']}, среда. \n\n1.\n<b>Математика</b>\n<u>8:30 - 10:05</u>\n<blockquote>313 аудитория\nДз: {get_homework('математика')}</blockquote>\n\n2\n<b>Информатика</b>\n<u>10:15 - 11:50</u>\n<blockquote>404 аудитория\nДз: {get_homework('информатика')}</blockquote>\n\n3.\n<b>Литература</b>\n<u>12:20 - 13:55</u>\n<blockquote>309 аудитория\nДз: {get_homework('литература')}</blockquote>\n\n4.<b>Обществознание</b>\n<u>14:10 - 15:45</u>\n<blockquote>424 аудитория\nДз: {get_homework('обществознание')}</blockquote>'
+        return{
+            'schedule_day_of_week_str': schedule_day_of_week_str,
+            'tommorow_schedule_day_of_week_str': tommorow_schedule_day_of_week_str
+        }
+    elif time['day_of_week_str'] == 'Wednesday':
+        time = get_time()
+        schedule_day_of_week_str = f'Сегодня {time['date_str']}, среда. \n\n1.\n<b>Математика</b>\n<u>8:30 - 10:05</u>\n<blockquote>313 аудитория\nДз: {get_homework('математика')}</blockquote>\n\n2\n<b>Информатика</b>\n<u>10:15 - 11:50</u>\n<blockquote>404 аудитория\nДз: {get_homework('информатика')}</blockquote>\n\n3.\n<b>Литература</b>\n<u>12:20 - 13:55</u>\n<blockquote>309 аудитория\nДз: {get_homework('литература')}</blockquote>\n\n4\n<b>Обществознание</b>\n<u>14:10 - 15:45</u>\n<blockquote>424 аудитория\nДз: {get_homework('обществознание')}</blockquote>'
+        tommorow_schedule_day_of_week_str = f'Завтра {time['date_tommorow_str']}, четверг. \n\n1.\n<b>Русский язык</b>\n<u>8:30 - 10:05</u>\n<blockquote>309 аудитория\nДз: {get_homework('русский')}</blockquote>\n\n2\n<b>Информатика</b>\n<u>10:15 - 11:50</u>\n<blockquote>404 аудитория\nДз: {get_homework('информатика')}</blockquote>\n\n3.\n<b>ОПД</b>\n<u>12:20 - 13:55</u>\n<blockquote>422 аудитория\nДз: {get_homework('опд')}</blockquote>\n\n4.\n<b>Математика</b>\n<u>14:10 - 15:45</u>\n<blockquote>313 аудитория\nДз: {get_homework('математика')}</blockquote>'
+        return{
+            'schedule_day_of_week_str': schedule_day_of_week_str,
+            'tommorow_schedule_day_of_week_str': tommorow_schedule_day_of_week_str
+        }
+    elif time['day_of_week_str'] == 'Thursday':
+        time = get_time()
+        schedule_day_of_week_str = f'Сегодня {time['date_str']}, четверг. \n\n1.\n<b>Русский язык</b>\n<u>8:30 - 10:05</u>\n<blockquote>309 аудитория\nДз: {get_homework('русский')}</blockquote>\n\n2\n<b>Информатика</b>\n<u>10:15 - 11:50</u>\n<blockquote>404 аудитория\nДз: {get_homework('информатика')}</blockquote>\n\n3.\n<b>ОПД</b>\n<u>12:20 - 13:55</u>\n<blockquote>422 аудитория\nДз: {get_homework('опд')}</blockquote>\n\n4\n<b>Математика</b>\n<u>14:10 - 15:45</u>\n<blockquote>313 аудитория\nДз: {get_homework('математика')}</blockquote>'
+        tommorow_schedule_day_of_week_str = f'Завтра {time['date_tommorow_str']}, пятница!! \n\n1.\n<b>Физика</b>\n<u>8:30 - 10:05</u>\n<blockquote>404 аудитория\nДз: {get_homework('физика')}</blockquote>\n\n2\n<b>Биология</b>\n<u>10:15 - 11:50</u>\n<blockquote>119 аудитория\nДз: {get_homework('биология')}</blockquote>\n\n3.\n<b>Математика</b>\n<u>12:20 - 13:55</u>\n<blockquote>313 аудитория\nДз: {get_homework('математика')}</blockquote>'
+        return{
+            'schedule_day_of_week_str': schedule_day_of_week_str,
+            'tommorow_schedule_day_of_week_str': tommorow_schedule_day_of_week_str
+        }
+    elif time['day_of_week_str'] == 'Friday':
+        time = get_time()
+        schedule_day_of_week_str = f'Сегодня {time['date_str']}, пятница!! \n\n1.\n<b>Физика</b>\n<u>8:30 - 10:05</u>\n<blockquote>404 аудитория\nДз: {get_homework('физика')}</blockquote>\n\n2\n<b>Биология</b>\n<u>10:15 - 11:50</u>\n<blockquote>119 аудитория\nДз: {get_homework('биология')}</blockquote>\n\n3.\n<b>Математика</b>\n<u>12:20 - 13:55</u>\n<blockquote>313 аудитория\nДз: {get_homework('математика')}</blockquote>'
+        tommorow_schedule_day_of_week_str = f'Завтра суббота, выходной'
+        return{
+            'schedule_day_of_week_str': schedule_day_of_week_str,
+            'tommorow_schedule_day_of_week_str': tommorow_schedule_day_of_week_str
+        }
+    elif time['day_of_week_str'] == 'Saturday':
+        time = get_time()
+        schedule_day_of_week_str = 'Сегодня суббота, выходной'
+        tommorow_schedule_day_of_week_str = 'чиллируем'
+        return{
+            'schedule_day_of_week_str': schedule_day_of_week_str,
+            'tommorow_schedule_day_of_week_str': tommorow_schedule_day_of_week_str
+        }
+    elif time['day_of_week_str'] == 'Sunday':
+        time = get_time()
+        schedule_day_of_week_str = 'завтра в шарагу 😨.'
+        tommorow_schedule_day_of_week_str = f'Завтра {time['date_tommorow_str']}, понедельник. \n\n1.\n<b>История</b>\n<u>8:30 - 10:05</u>\n<blockquote>424 аудитория\nДз: {get_homework('история')}</blockquote>\n\n2\n<b>Физкультура</b>\n<u>10:15 - 11:50</u>\n<blockquote>Спортивный зал</blockquote>\n\n3.\n<b>Английский язык</b>\n<u>12:20 - 13:55</u>\n<blockquote>413 аудитория - 1 группа\nДз: {get_homework('англ1')}\n314 аудитория - 2 группа\nДз: {get_homework('англ2')}</blockquote>\n\n4.\n<b>Русский язык</b>\n<u>14:10 - 15:45</u>\n<blockquote>309 аудитория\nДз: {get_homework('русский')}</blockquote>'
+        return{
+            'schedule_day_of_week_str': schedule_day_of_week_str,
+            'tommorow_schedule_day_of_week_str': tommorow_schedule_day_of_week_str
+        }
 
 
 
 @router.inline_query()
 async def handle_inline_query(inline_query: types.InlineQuery):
+    schedule1 = schedule()
     query_text = inline_query.query.lower()  # делаем все строчные для удобства
     result1 = InlineQueryResultArticle(
             id='Расписание',
             title='Расписание',
             description='хочется пары сегодняшние узнать...',
             input_message_content = InputTextMessageContent(
-                message_text = schedule_day_of_week_str,
+                
+                message_text = f'{schedule1['schedule_day_of_week_str']}',
                 parse_mode = 'HTML'
                 )
             )
@@ -204,7 +227,7 @@ async def handle_inline_query(inline_query: types.InlineQuery):
             title='Расписание на завтра',
             description='интересно, какие завтра пары?..',
             input_message_content = InputTextMessageContent(
-                message_text = tommorow_schedule_day_of_week_str,
+                message_text = f'{schedule1['tommorow_schedule_day_of_week_str']}',
                 parse_mode = 'HTML'
                 )
             )
