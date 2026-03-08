@@ -151,7 +151,7 @@ async def help(message: Message):
 def schedule():
     time = get_time()
     if time['day_of_week_str'] == 'Monday':
-        schedule_day_of_week_str = f'Сегодня {time['time_str']}, понедельник. \n\n1.\n<b>История</b>\n<u>8:30 - 10:05</u>\n<blockquote>424 аудитория\nДз: {get_homework('история')}</blockquote>\n\n2\n<b>Физкультура</b>\n<u>10:15 - 11:50</u>\n<blockquote>Спортивный зал</blockquote>\n\n3.\n<b>Английский язык</b>\n<u>12:20 - 13:55</u>\n<blockquote>413 аудитория - 1 группа\nДз: {get_homework('англ1')}\n314 аудитория - 2 группа\nДз: {get_homework('англ2')}</blockquote>\n\n4\n<b>Русский язык</b>\n<u>14:10 - 15:45</u>\n<blockquote>309 аудитория\nДз: {get_homework('русский')}</blockquote>'
+        schedule_day_of_week_str = f'Сегодня {time['date_str']}, понедельник. \n\n1.\n<b>История</b>\n<u>8:30 - 10:05</u>\n<blockquote>424 аудитория\nДз: {get_homework('история')}</blockquote>\n\n2\n<b>Физкультура</b>\n<u>10:15 - 11:50</u>\n<blockquote>Спортивный зал</blockquote>\n\n3.\n<b>Английский язык</b>\n<u>12:20 - 13:55</u>\n<blockquote>413 аудитория - 1 группа\nДз: {get_homework('англ1')}\n314 аудитория - 2 группа\nДз: {get_homework('англ2')}</blockquote>\n\n4\n<b>Русский язык</b>\n<u>14:10 - 15:45</u>\n<blockquote>309 аудитория\nДз: {get_homework('русский')}</blockquote>'
         tommorow_schedule_day_of_week_str = f'Завтра {time['date_tommorow_str']}, вторник. \n\n1.\n<b>Литература</b>\n<u>8:30 - 10:05</u>\n<blockquote>309 аудитория\nДз: {get_homework('литература')}</blockquote>\n\n2\n<b>Физика</b>\n<u>10:15 - 11:50</u>\n<blockquote>404 аудитория\nДз: {get_homework('физика')}</blockquote>\n\n3.\n<b>История</b>\n<u>12:20 - 13:55</u>\n<blockquote>424 аудитория\nДз: {get_homework('история')}</blockquote>\n\n4.\n<b>Информатика</b>\n<u>14:10 - 15:45</u>\n<blockquote>404 аудитория\nДз: {get_homework('информатика')}</blockquote>'
         return{
             'schedule_day_of_week_str': schedule_day_of_week_str,
@@ -232,4 +232,5 @@ async def handle_inline_query(inline_query: types.InlineQuery):
                 )
             )
     await inline_query.answer([result1, result2], cache_time=0)
+
 
