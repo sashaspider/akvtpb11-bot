@@ -99,6 +99,10 @@ def get_main_reply_keyboard():
 async def start(message: Message):
     await message.answer(f'привет, я - персональный помощник группы пб-11\n/help - навигация', parse_mode='HTML', reply_markup=get_main_reply_keyboard())
 
+@router.message(Command('test'))
+async def test(message: Message):
+    await message.answer(f'{time['time_str']}')
+
 @router.message(F.text == 'Расписание')
 async def command_keyboard_handler(message: Message):
     await message.answer_photo(f'https://www.dropbox.com/scl/fi/f2z338t70quvmalnhpsxg/Screenshot_4.png?rlkey=ebjlkw75jicesx1bypemcdhhz&st=rixawmf1&dl=0', caption='расписание на всю неделю:')
@@ -147,9 +151,9 @@ async def help(message: Message):
 time = get_time()
 
 if time['day_of_week_str'] == 'Monday':
-    schedule_day_of_week_str = f'Сегодня {time['date_str']}, понедельник. \n\n1.\n<b>История</b>\n<u>8:30 - 10:05</u>\n<blockquote>424 аудитория\nДз: {get_homework('история')}</blockquote>\n\n2\n<b>Физкультура</b>\n<u>10:15 - 11:50</u>\n<blockquote>Спортивный зал</blockquote>\n\n3.\n<b>Английский язык</b>\n<u>12:20 - 13:55</u>\n<blockquote>413 аудитория - 1 группа\nДз: {get_homework('англ1')}314 аудитория - 2 группа\nДз: {get_homework('англ2')}</blockquote>\n\n4\n<b>Русский язык</b>\n<u>14:10 - 15:45</u>\n<blockquote>309 аудитория\n {get_homework('русский')}</blockquote>'
+    schedule_day_of_week_str = f'Сегодня {time['date_str']}, понедельник. \n\n1.\n<b>История</b>\n<u>8:30 - 10:05</u>\n<blockquote>424 аудитория\nДз: {get_homework('история')}</blockquote>\n\n2\n<b>Физкультура</b>\n<u>10:15 - 11:50</u>\n<blockquote>Спортивный зал</blockquote>\n\n3.\n<b>Английский язык</b>\n<u>12:20 - 13:55</u>\n<blockquote>413 аудитория - 1 группа\nДз: {get_homework('англ1')}\n314 аудитория - 2 группа\nДз: {get_homework('англ2')}</blockquote>\n\n4\n<b>Русский язык</b>\n<u>14:10 - 15:45</u>\n<blockquote>309 аудитория\n {get_homework('русский')}</blockquote>'
 
-    tommorow_schedule_day_of_week_str = f'Завтра {time['date_tommorow_str']}, вторник. \n\n1.\n<b>Литература</b>\n<u>8:30 - 10:05</u>\n<blockquote>309 аудитория\nДз: {get_homework('литература')}</blockquote>\n\n2\n<b>Физика</b>\n<u>10:15 - 11:50</u>\n<blockquote>404 аудитория\nДз: {get_homework('физика')}</blockquote>\n\n3.\n<b>История</b>\n<u>12:20 - 13:55</u>\n<blockquote>424 аудиторияДз: {get_homework('история')}</blockquote>\n\n4.\n<b>Информатика</b>\n<u>14:10 - 15:45</u>\n<blockquote>404 аудитория\nДз: {get_homework('информатика')}</blockquote>'
+    tommorow_schedule_day_of_week_str = f'Завтра {time['date_tommorow_str']}, вторник. \n\n1.\n<b>Литература</b>\n<u>8:30 - 10:05</u>\n<blockquote>309 аудитория\nДз: {get_homework('литература')}</blockquote>\n\n2\n<b>Физика</b>\n<u>10:15 - 11:50</u>\n<blockquote>404 аудитория\nДз: {get_homework('физика')}</blockquote>\n\n3.\n<b>История</b>\n<u>12:20 - 13:55</u>\n<blockquote>424 аудитория\nДз: {get_homework('история')}</blockquote>\n\n4.\n<b>Информатика</b>\n<u>14:10 - 15:45</u>\n<blockquote>404 аудитория\nДз: {get_homework('информатика')}</blockquote>'
 
 elif time['day_of_week_str'] == 'Tuesday':
     schedule_day_of_week_str = f'Сегодня {time['date_str']}, вторник. \n\n1.\n<b>Литература</b>\n<u>8:30 - 10:05</u>\n<blockquote>309 аудитория\nДз: {get_homework('литература')}</blockquote>\n\n2\n<b>Физика</b>\n<u>10:15 - 11:50</u>\n<blockquote>404 аудитория\nДз: {get_homework('физика')}</blockquote>\n\n3.\n<b>История</b>\n<u>12:20 - 13:55</u>\n<blockquote>424 аудитория\nДз: {get_homework('история')}</blockquote>\n\n4\n<b>Информатика</b>\n<u>14:10 - 15:45</u>\n<blockquote>404 аудитория\nДз: {get_homework('информатика')}</blockquote>'
@@ -205,3 +209,4 @@ async def handle_inline_query(inline_query: types.InlineQuery):
                 )
             )
     await inline_query.answer([result1, result2], cache_time=0)
+
